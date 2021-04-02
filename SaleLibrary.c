@@ -10,6 +10,7 @@ void instructions(void)
 	printf("3 - Urun Islemleri\n");
 	printf("4 - Musteri Analizleri\n");
 	printf("5 - Urun Analizleri\n");
+	printf("0 - Cikmak icin\n");
 	printf("\n");
 }
 
@@ -595,6 +596,5 @@ double calculateSalesForAllProducts(purchased **firstPurchased)
 	}
 	return tempTotalSalesForAllProducts;
 }
-
 
 
