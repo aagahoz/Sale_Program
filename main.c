@@ -5,7 +5,8 @@ int main() {
 
 // 	musteri verileri
 	int customerID = 1, customerID1 = 1, customerID2 = 2, customerID3 = 3, customerID4 = 4, customerID5 = 5;
-	char nameCustomer1[20] = "Ali Karaman", nameCustomer2[20] = "Zehra Cilek", nameCustomer3[20] = "Mehmet Derin", nameCustomer4[20] = "Veli Ortanca", nameCustomer5[20] = "Menekse Serin";
+	char nameCustomer1[20] = "Ali Karaman", nameCustomer2[20] = "Zehra Cilek", nameCustomer3[20] = "Mehmet Derin";
+	char nameCustomer4[20] = "Veli Ortanca", nameCustomer5[20] = "Menekse Serin";
 	unsigned int typeCustomer1 = 1, typeCustomer2 = 0, typeCustomer3 = 0, typeCustomer4 = 1, typeCustomer5 = 1;
 	double x_coord1 = 16.8, x_coord2 = 12.4, x_coord3 = 10.55, x_coord4 = 5.1, x_coord5 = 2;
 	double y_coord1 = 10, y_coord2 = 6.9, y_coord3 = 15.4, y_coord4 = 1.2, y_coord5 = 7.9;
@@ -21,8 +22,10 @@ int main() {
 	
 // 	urun verileri
 	int productID = 1, productID1 = 1, productID2 = 2, productID3 = 3, productID4= 4, productID5 = 5, productID6 = 6, productID7 = 7;
-	char nameProduct1[20] = "Portakal Sikma", nameProduct2[20] = "Muz Yerli", nameProduct3[20] = "Soğan", nameProduct4[20] = "Pirasa", nameProduct5[20] = "Lahana", nameProduct6[20] = "Limon", nameProduct7[20] = "Hamsi";
-	unsigned int typeProduct1 = 1, typeProduct2 = 1, typeProduct3 = 2, typeProduct4 = 2, typeProduct5 = 2, typeProduct6 = 1, typeProduct7 = 3;
+	char nameProduct1[20] = "Portakal Sikma", nameProduct2[20] = "Muz Yerli", nameProduct3[20] = "SoÃ°an", nameProduct4[20] = "Pirasa";
+	char nameProduct5[20] = "Lahana", nameProduct6[20] = "Limon", nameProduct7[20] = "Hamsi";
+	unsigned int typeProduct1 = 1, typeProduct2 = 1, typeProduct3 = 2, typeProduct4 = 2;
+	unsigned int typeProduct5 = 2, typeProduct6 = 1, typeProduct7 = 3;
 	double price1 = 5.99, price2 = 12.95, price3 = 7.45, price4 = 3.95, price5 = 5.95, price6 = 7.45, price7 = 15;
 	
 	product *firstProduct = malloc(sizeof(product));
@@ -39,8 +42,10 @@ int main() {
 //	fatura verileri
 	int purchasedID = 1;
 	int invoiceID = 1;
-	double cost1 = 123.5, cost2 = 12.40, cost3 = 23.45, cost4 = 56.75, cost5 = 45.50, cost6 = 30.6, cost7 = 25.5, cost8 = 30.0, cost9 = 23.78, cost10 = 34.5;
-	double cost11 = 567.0, cost12 = 45.0, cost13 = 32.0, cost14 = 40.95, cost15 = 34.5, cost16 = 71.2, cost17 = 63.3, cost18 = 17.3, cost19 = 29.4, cost20 = 20.05;
+	double cost1 = 123.5, cost2 = 12.40, cost3 = 23.45, cost4 = 56.75, cost5 = 45.50;
+	double cost6 = 30.6, cost7 = 25.5, cost8 = 30.0, cost9 = 23.78, cost10 = 34.5;
+	double cost11 = 567.0, cost12 = 45.0, cost13 = 32.0, cost14 = 40.95, cost15 = 34.5; 
+	double	cost16 = 71.2, cost17 = 63.3, cost18 = 17.3, cost19 = 29.4, cost20 = 20.05;
 
 	product *firstPurchased = malloc(sizeof(product));
 
@@ -79,7 +84,6 @@ int main() {
 	int tempProductType;
 	int tempCustomerID;
 	int tempProductID;
-	int islem;
 	double tempProductPrice;
 	double tempCargo;
 	int tempAmount;
@@ -96,6 +100,7 @@ int main() {
 	int newCustomer = 1;
 	int stateProduct = 0;
 	int newProduct = 1;
+	int islem;
 	int altIslem;
 	while(1==1)
 	{
@@ -105,6 +110,10 @@ int main() {
 		system("CLS");
 		switch(islem)
 		{
+			case 0:
+				system("PAUSE");
+				return;
+				break;
 			case 1:
 				printf("Satis islemi secildi\n\n");
 				printf("** Yeni satis icin `1`\n** Tum faturalarin bilgisini almak icin `2`\n** Menuye donmek icin `0`\nGiriniz >  ");
@@ -377,4 +386,3 @@ int main() {
 	}
 	return 0;
 }
-
