@@ -14,7 +14,6 @@ void instructions(void)
 	printf("\n");
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -22,7 +21,7 @@ void instructions(void)
 
 customer *newCustomer(int customerID, char *customerName, unsigned int customerType, double x_coord, double y_coord)
 {
-	customer *yeniDugum = malloc(sizeof(customer));
+	customer *yeniDugum = (customer*)malloc(sizeof(customer));
 	
 	yeniDugum->ID = customerID;
 	strcpy(yeniDugum->name, customerName);
@@ -194,7 +193,7 @@ double findCustomerCargo(customer **First, int customerID)
 
 product *newProduct(int productID, char *productName, unsigned int productType, double price)
 {
-	product *yeniDugum = malloc(sizeof(product));
+	product *yeniDugum = (product*)malloc(sizeof(product));
 
 	yeniDugum->ID = productID;
 	strcpy(yeniDugum->name, productName);
@@ -352,7 +351,7 @@ void findProductType(product **First, unsigned int productType)
 
 purchased *newPurchased(int purchasedID, int invoiceID, int customerID, int productID, double cost)
 {
-	purchased *yeniDugum = malloc(sizeof(purchased));
+	purchased *yeniDugum = (purchased*)malloc(sizeof(purchased));
 	
 	yeniDugum->ID = purchasedID;
 	yeniDugum->invoice_ID = invoiceID;
@@ -560,7 +559,7 @@ int *findProductsToTypes(product **firstProduct, int productType)
 //--------------------------------------------------------------------------------------
 
 
-double calculateSalesForProductType(purchased **firstPurchased, int *typeIDs, int productType){
+double calculateSalesForProductType(purchased **firstPurchased, int *typeIDs){
 	
 	purchased *temp = *firstPurchased;
 	double tempTotalSalesForProductType = 0;
