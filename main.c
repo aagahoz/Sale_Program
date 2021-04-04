@@ -22,10 +22,9 @@ int main() {
 	
 // 	urun verileri
 	int productID = 1, productID1 = 1, productID2 = 2, productID3 = 3, productID4= 4, productID5 = 5, productID6 = 6, productID7 = 7;
-	char nameProduct1[20] = "Portakal Sikma", nameProduct2[20] = "Muz Yerli", nameProduct3[20] = "Soðan", nameProduct4[20] = "Pirasa";
+	char nameProduct1[20] = "Portakal Sikma", nameProduct2[20] = "Muz Yerli", nameProduct3[20] = "Sogan", nameProduct4[20] = "Pirasa";
 	char nameProduct5[20] = "Lahana", nameProduct6[20] = "Limon", nameProduct7[20] = "Hamsi";
-	unsigned int typeProduct1 = 1, typeProduct2 = 1, typeProduct3 = 2, typeProduct4 = 2;
-	unsigned int typeProduct5 = 2, typeProduct6 = 1, typeProduct7 = 3;
+	unsigned int typeProduct1 = 1, typeProduct2 = 1, typeProduct3 = 2, typeProduct4 = 2, typeProduct5 = 2, typeProduct6 = 1, typeProduct7 = 3;
 	double price1 = 5.99, price2 = 12.95, price3 = 7.45, price4 = 3.95, price5 = 5.95, price6 = 7.45, price7 = 15;
 	
 	product *firstProduct = malloc(sizeof(product));
@@ -42,10 +41,8 @@ int main() {
 //	fatura verileri
 	int purchasedID = 1;
 	int invoiceID = 1;
-	double cost1 = 123.5, cost2 = 12.40, cost3 = 23.45, cost4 = 56.75, cost5 = 45.50;
-	double cost6 = 30.6, cost7 = 25.5, cost8 = 30.0, cost9 = 23.78, cost10 = 34.5;
-	double cost11 = 567.0, cost12 = 45.0, cost13 = 32.0, cost14 = 40.95, cost15 = 34.5; 
-	double	cost16 = 71.2, cost17 = 63.3, cost18 = 17.3, cost19 = 29.4, cost20 = 20.05;
+	double cost1 = 123.5, cost2 = 12.40, cost3 = 23.45, cost4 = 56.75, cost5 = 45.50;		double cost6 = 30.6, cost7 = 25.5, cost8 = 30.0, cost9 = 23.78, cost10 = 34.5;
+	double cost11 = 567.0, cost12 = 45.0, cost13 = 32.0, cost14 = 40.95, cost15 = 34.5; 	double	cost16 = 71.2, cost17 = 63.3, cost18 = 17.3, cost19 = 29.4, cost20 = 20.05;
 
 	product *firstPurchased = malloc(sizeof(product));
 
@@ -80,28 +77,9 @@ int main() {
 	invoiceID++;
 	
 
-	int tempCustomerType;
-	int tempProductType;
-	int tempCustomerID;
-	int tempProductID;
-	double tempProductPrice;
-	double tempCargo;
-	int tempAmount;
-	double tempInvoice;
-	int newPurchased;
-	double totalAmountForCustomer;
-	double totalAmountForAllCustomers;
-	double totalCargoPriceForAllCustomers;
-	double totalSalesForProduct;
-	double totalSalesForProductType;
-	double totalSalesForAllProducts;
-	int *IDsForType = NULL;
-	int stateCustomer = 0;
-	int newCustomer = 1;
-	int stateProduct = 0;
-	int newProduct = 1;
-	int islem;
-	int altIslem;
+	int tempCustomerType;	int tempProductType;	int tempCustomerID;	int tempProductID;	double tempProductPrice;	double tempCargo;	int tempAmount;	double tempInvoice;	int newPurchased;
+	double totalAmountForCustomer;	double totalAmountForAllCustomers;	double totalCargoPriceForAllCustomers;	double totalSalesForProduct;	double totalSalesForProductType;	double totalSalesForAllProducts;
+	int *IDsForType = NULL;	int stateCustomer = 0;	int newCustomer = 1;	int stateProduct = 0;	int newProduct = 1;	int islem;	int altIslem;
 	while(1==1)
 	{
 		instructions();
@@ -135,7 +113,7 @@ int main() {
 						else if(!stateCustomer)
 						{
 							printf("Aradiginiz musteri sistemde kayitli degildir.\n");
-							printf("Sisteme yeni musteri kaydetmek icin 1\nBaska bir ID girmek icin `2`\nMenuye donmek icin 0\nGiriniz > ");
+							printf("Sisteme yeni musteri kaydetmek icin `1`\nBaska bir ID girmek icin `2`\nMenuye donmek icin `0`\nGiriniz > ");
 							scanf("%d", &newCustomer);
 						}
 						if(newCustomer == 0)
@@ -171,7 +149,7 @@ int main() {
 							if(!stateProduct)
 							{
 								printf("Aradiginiz urun sistemde kayitli degildir.\n");
-								printf("Baska bir urun almak icin 1\nMenuye donmek icin 0\nGiriniz > ");
+								printf("Baska bir urun almak icin `1`\nMenuye donmek icin `0`\nGiriniz > ");
 								scanf("%d", &newProduct);
 							}
 							if(newProduct == 1)
@@ -191,11 +169,11 @@ int main() {
 						tempProductPrice = findProductPrice(&firstProduct, tempProductID);
 						tempInvoice = calculateInvoice(tempProductPrice, tempAmount, tempCargo);
 					}
-					addPurchasedToSystem(&firstPurchased, purchasedID, invoiceID, tempCustomerID, tempProductID, tempInvoice); purchasedID++;
-					printf("%-15s %-15s %-15s %-12s %-15s\n","Purchased ID","Invoice ID", "Customer ID", "Product ID", "Cost");
+					addPurchasedToSystem(&firstPurchased, purchasedID, invoiceID, tempCustomerID, tempProductID, tempInvoice); 
+					printf("%-15s %-15s %-15s %-12s %-15s\n","Purchased ID","Invoice ID", "Customer ID", "Product ID", "Cost"); 
 					printf("%-15d ", purchasedID); printf("%-15d ", invoiceID);  printf("%-15d ", tempCustomerID);   printf("%-10d ", tempProductID);  printf("%-15.2f ",tempInvoice);	printf("\n");
-					
-					printf("Ayni musteri icin yeni bir urun daha eklemek icin 1\nSatin alma islemini sonlandirmak icin 0\nGiriniz > ");
+					purchasedID++;
+					printf("Ayni musteri icin yeni bir urun daha eklemek icin `1`\nSatin alma islemini sonlandirmak icin `0`\nGiriniz > ");
 					scanf("%d", &newPurchased);
 					if(newPurchased == 1)
 					{
@@ -234,7 +212,7 @@ int main() {
 				else if(altIslem == 2)
 				{
 					printf("Musteri Tipine gore bilgi verilecek!\n");
-					printf("Musteri tipi (bireysel:0 ticari:1) Giriniz > ");
+					printf("Musteri tipi (bireysel:`0` ticari:`1`) Giriniz > ");
 					scanf("%d",&tempCustomerType);
 					findCustomerType(&firstCustomer, tempCustomerType);
 				}
@@ -248,7 +226,7 @@ int main() {
 					if(!stateCustomer)
 					{
 						printf("Aradiginiz musteri sistemde kayitli degildir.\n");
-						printf("Sisteme yeni musteri kaydetmek icin 1\nMenuye donmek icin 0\nGiriniz > ");
+						printf("Sisteme yeni musteri kaydetmek icin `1`\nMenuye donmek icin `0`\nGiriniz > ");
 						scanf("%d", &newCustomer);
 					}
 					if(newCustomer)
@@ -284,7 +262,7 @@ int main() {
 				else if(altIslem == 2)
 				{
 					printf("Urun Tipine gore bilgi verilecek!\n");
-					printf("Urun tipi (meyve:1 sebze:2 et:3) Giriniz > ");
+					printf("Urun tipi (meyve:`1` sebze:`2` et:`3`) Giriniz > ");
 					scanf("%d",&tempProductType);
 					findProductType(&firstProduct, tempProductType);
 				}
@@ -365,7 +343,7 @@ int main() {
 					printf("Urun tipini giriniz > ");
 					scanf("%d", &tempProductType);
 					IDsForType = findProductsToTypes(&firstProduct, tempProductType);
-					totalSalesForProductType = calculateSalesForProductType(&firstPurchased, IDsForType, tempProductType);
+					totalSalesForProductType = calculateSalesForProductType(&firstPurchased, IDsForType);
 					printf("Urunun tipinin toplam satis tutari %.2f\n",totalSalesForProductType);
 				}
 				else if(altIslem == 3)
