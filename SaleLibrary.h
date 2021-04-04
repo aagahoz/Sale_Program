@@ -12,7 +12,7 @@ typedef struct Customer {
 	unsigned int type: 1;
 	double x_coord;
 	double y_coord;
-	struct customer *nextCusPtr;
+	struct Customer *nextCusPtr;
 }customer;
 
 typedef struct Product {
@@ -20,7 +20,7 @@ typedef struct Product {
 	char name[50];
 	unsigned int type: 4;
 	double price;
-	struct product *nextProPtr;
+	struct Product *nextProPtr;
 }product;
 
 typedef struct Purchased {
@@ -29,7 +29,7 @@ typedef struct Purchased {
 	int customer_ID;
 	int product_ID;
 	double cost;
-	struct purchased *nextPurchasedPtr;
+	struct Purchased *nextPurchasedPtr;
 }purchased;
 
 void instructions(void);
@@ -62,7 +62,7 @@ double calculateCargoPriceForAllCustomers(customer **firstCustomer);
 
 double calculateSalesForProduct(purchased **firstPurchased, int productID);
 int *findProductsToTypes(product **firstProduct, int productType);							       
-double calculateSalesForProductType(purchased **firstPurchased, int *typeIDs, int productType);
+double calculateSalesForProductType(purchased **firstPurchased, int *typeIDs);
 double calculateSalesForAllProducts(purchased **firstPurchased);						
 
 #endif
